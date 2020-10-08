@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -13,19 +8,58 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" type="image/jpg" href="/img/favicon.ico"/>
 </head>
 
 <body>
-    <div class="main-content">
-        {{>header}}
-        <p>All of Arnav's Projects</p>
-        <a href="http://weather.guneta.com">Weather</a>
-        <a href="http://dfa.guneta.com">DFAs</a>
+    {{>header}}
+    <main class="main-content">
+        <h2>Arnav's Projects</h2>
+        <div class="card">
+            <h3 class="subheader">NodeJS</h3>
+            <ul class="list">
+                <li class="waves-effect"> <a href="http://weather.guneta.com">
+                        <div class="valign-wrapper">
+                            <i class="material-icons left circle white-text">language</i>
+                            <div class="title">
+                                Weather<br>
+                                <span>Sep 19, 2020</span>
+                            </div>
+                            <i class="material-icons ml-auto">info</i>
+                        </div>
+                    </a>
+                </li>
+                <li class="waves-effect">
+                    <a href="http://dfa.guneta.com">
+                        <div class="valign-wrapper">
+                            <i class="material-icons left circle white-text">language</i>
+                            <div class="title">
+                                DFAs<br>
+                                <span>Sep 20, 2020</span>
+                            </div>
+                            <i class="material-icons ml-auto">info</i>
+                        </div>
+                    </a>
+                </li>
+                <hr class="list-divider">
+                <h3 class="subheader">Static Websites</h3>
+                <li class="waves-effect">
+                    <a href="http://jchs.guneta.com">
+                        <div class="valign-wrapper">
+                            <i class="material-icons left circle white-text">language</i>
+                            <div class="title">
+                                JCHS Website<br>
+                                <span>Aug 14, 2016</span>
+                            </div>
+                            <i class="material-icons ml-auto">info</i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
     {{>footer}}
 </body>
+
 
 </html>
