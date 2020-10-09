@@ -52,8 +52,8 @@ header {
 
 body {
     color: var(--main-offwhite);
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     min-height: var(--full-height);
 }
 
@@ -75,7 +75,7 @@ main {
     color: var(--main-bg-color);
     max-width: 50vw;
     margin: 0 auto;
-    /* flex-grow: 1; */
+    flex-grow: 1;
 }
 
 .potrait {
@@ -99,11 +99,10 @@ button {
     animation: fadein .3s ease 1.4s forwards;
 }
 
-.logo-svg {
-    /* margin-right: auto; */
+#logo-svg {
     cursor: pointer;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 75%;
 }
 
 .nav_links {
@@ -132,6 +131,47 @@ button {
     background: rgba(0, 136, 169, 0.8)
 }
 
+.burger {
+    display: none;
+}
+
+.burger div {
+    opacity: 0;
+    width: 25px;
+    height: 3px;
+    background-color: var(--main-offwhite);
+    margin: 5px;
+    animation: fadein .3s ease 1.4s forwards;
+}
+
+@media screen and (max-width: 825px) {
+    .nav_links {
+        position: absolute;
+        right: 0px;
+        height: 450px;
+        top: 8vh;
+        background-color: rgb(36, 37, 42, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        /* transition: transform 0.5s ease-in; */
+    }
+    .nav_links li {
+        opacity: 0;
+        padding: 25px 0;
+    }
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in;
+}
+
 footer {
     color: var(--main-bg-color);
     border-top: 1px solid #eeeeee;
@@ -151,11 +191,14 @@ footer {
 
 .logo-container {
     display: inline-block;
-    transform: translate(0%, -20%);
+    margin-top: 175px;
+}
+
+.scroll-container {
+    margin-top: 100px;
 }
 
 #logo-svg {
-    margin: 100px;
     width: 75%;
     height: 75%;
 }
@@ -208,6 +251,24 @@ footer {
     animation: fadein .5s ease 1s forwards;
 }
 
+#mouse,
+#arrows {
+    opacity: 0;
+    animation: fadein .3s ease 1.5s forwards;
+}
+
+#wheel {
+    animation: move-down 1s ease-in 1.8s alternate infinite;
+}
+
+#top-arrow {
+    animation: fadein 1s ease-in 1.8s alternate-reverse infinite, move-down 1s ease-in 1.78s alternate infinite;
+}
+
+#bottom-arrow {
+    animation: fadein 1s ease-in 2.1s alternate-reverse infinite, move-down 1s ease-in 1.8s alternate infinite;
+}
+
 @keyframes main-logo-rotate {
     from {
         transform: rotateZ(0deg);
@@ -229,5 +290,14 @@ footer {
 @keyframes line-anim {
     to {
         stroke-dashoffset: 0;
+    }
+}
+
+@keyframes move-down {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(7px);
     }
 }
